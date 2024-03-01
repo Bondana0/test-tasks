@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор кредиту</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Калькулятор кредиту</h1>
+    <form id="loan-form">
+      <label for="loan-amount">Сума кредиту:</label><br />
+      <input
+        type="number"
+        id="loan-amount-input"
+        name="loan-amount"
+        min="1000"
+        max="50000"
+        step="100"
+        value="1000"
+        required
+      />
+      <input
+        type="range"
+        id="loan-amount-slider"
+        name="loan-amount-slider"
+        min="1000"
+        max="50000"
+        step="100"
+        value="1000"
+      /><br />
+      <span id="loan-amount-error" style="color: red; display: none"
+        >Сума кредиту повинна бути від 1000 до 50000 грн</span
+      ><br />
+
+      <label for="loan-duration">Період погашення (днів):</label><br />
+      <input
+        type="number"
+        id="loan-duration-input"
+        name="loan-duration"
+        min="7"
+        max="60"
+        step="1"
+        value="7"
+        required
+      />
+      <input
+        type="range"
+        id="loan-duration-slider"
+        name="loan-duration-slider"
+        min="7"
+        max="60"
+        step="1"
+        value="0"
+      /><br />
+      <span id="loan-duration-error" style="color: red; display: none"
+        >Період погашення повинен бути від 7 до 60 днів</span
+      ><br />
+
+      <button type="submit" id="submit-button" disabled>Отримати кредит</button
+      ><br /><br />
+
+      <label for="daily-payment">Щоденний платіж:</label>
+      <input type="text" id="daily-payment" readonly /><br /><br />
+
+      <label for="total-payment">Загальна сума погашення:</label>
+      <input type="text" id="total-payment" readonly /><br /><br />
+    </form>
+
+    <script src="code.js"></script>
+  </body>
+</html>
